@@ -17,9 +17,18 @@ const header = () => {
                     <Link to='/pages'>Pages</Link>
                     <Link to='/pricing'>Pricing</Link>
                     <Link to='/contact'>Contact</Link>
-
                 </ul>
+
+                <button className='toggle'>
+                    <i className='fa fa-bars'></i>
+                </button>
             </nav>
+            <div className="account flexSB">
+                    <i className='fa fa-search'></i>
+                    <i className='fa fa-bell'></i>
+                    <i className='fa fa-user'></i>
+                    <button> Subscribe Now</button>
+                </div>
         </div>
     </header></>
   )
