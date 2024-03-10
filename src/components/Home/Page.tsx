@@ -5,7 +5,7 @@ const Page = (items:any) => {
   return (
     <div className='homeContainer'>
         {items.map((item:any) => (
-            <HomeCard />
+            <HomeCard key={item.id} item={item} />
                         ))}
     </div>
   )
