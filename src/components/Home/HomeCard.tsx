@@ -43,12 +43,12 @@ const HomeCard = (props:{item:item}) => {
               <i className='fa fa-play'></i>
           </button>
 
-          <div className='button-row'>
+          <div className='playButton row'>
             <Link to={`/singlePage/${props.item.id}`}></Link>
             <button >
               <div className='img'>
               <img src='./images/play-button.png' alt='' />
-              <img src='./images/play.png' alt='' />
+              <img src='./images/play.png' alt='' className='change' />
               </div>
               WATCH TRAILER
             </button>

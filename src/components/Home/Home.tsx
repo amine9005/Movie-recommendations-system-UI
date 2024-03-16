@@ -11,8 +11,9 @@ const Home = () => {
 
       </Page>
       <div className="margins"></div>
-    </section>
-  )
+    </section>)
+
+
 }
 
 export default Home
