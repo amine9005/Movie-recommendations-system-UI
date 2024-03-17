@@ -7,58 +7,59 @@ interface item {
 
 const HomeCard = (props:{item:item}) => {
   return (
-    <div className='box'>
-      <div className="coverImage">
-        <img src={props.item.cover} alt=''/>
-      </div>
-      <div className="content flex">
-        <h1>{props.item.name}</h1>
-        <div className="rating flex">
-          <i className='fa fa-star'></i>
-          <i className='fa fa-star'></i>
-          <i className='fa fa-star'></i>
-          <i className='fa fa-star-half'></i>
+    <>
+      <div className='box'>
+        <div className='coverImage'>
+          <img src={props.item.cover} alt='' />
         </div>
-        <label>{props.item.rating}</label>
-        <span>GP</span>
-        <label>{props.item.time}</label>
-        <p>{props.item.desc}</p>
-        <div className='cast'>
-          <h4>
-            <span>Starring</span>
-            {props.item.starring}
-          </h4>
-
-          <h4>
-            <span>Genres</span>
-            {props.item.genres}
-          </h4>
-
-          <h4>
-            <span>Tags</span>
-            {props.item.tags}
-          </h4>
-
-          <button className='primary-btn'>
-              <i className='fa fa-play'></i>
-          </button>
-
-          <div className='playButton row'>
-            <Link to={`/singlePage/${props.item.id}`}></Link>
-            <button >
-              <div className='img'>
-              <img src='./images/play-button.png' alt='' />
-              <img src='./images/play.png' alt='' className='change' />
+        <div className='content flex'>
+          <div className='details row'>
+            <h1>{props.item.name}</h1>
+            <div className='rating flex'>
+              <div className='rate'>
+                <i className='fas fa-star'></i>
+                <i className='fa fa-star'></i>
+                <i className='fa fa-star'></i>
+                <i className='fa fa-star'></i>
+                <i className='fa fa-star-half'></i>
               </div>
-              WATCH TRAILER
+              <label>{props.item.rating}(Imdb)</label>
+              <span>GP</span>
+              <label>{props.item.time}</label>
+            </div>
+            <p>{props.item.desc}</p>
+            <div className='cast'>
+              <h4>
+                <span>Starring </span>
+                {props.item.starring}
+              </h4>
+              <h4>
+                <span>Genres </span>
+                {props.item.genres}
+              </h4>
+              <h4>
+                <span>Tags </span>
+                {props.item.tags}
+              </h4>
+            </div>
+            <button className='primary-btn'>
+              <i className='fas fa-play'></i> PLAY NOW
             </button>
-
           </div>
-
+          <div className='palyButton row'>
+            <Link to={`/singlepage/${props.item.id}`}>
+              <button>
+                <div className='img'>
+                  <img src='./images/play-button.png' alt='' />
+                  <img src='./images/play.png' className='change' />
+                </div>
+                WATCH TRAILER
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
-
-    </div>
+    </>
   )
 }
 
