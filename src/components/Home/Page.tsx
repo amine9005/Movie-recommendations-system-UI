@@ -28,7 +28,7 @@ const SamplePrevArrow = (props:any) =>{
     </div>
   )
 }
-const Page = (items:any) => {
+const Page = (props:any) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -44,7 +44,7 @@ const Page = (items:any) => {
   return (
     <div className='homeContainer'>
       <Slider {...settings}>
-        {items ? items.items.map((item:any) => (
+        {props ? props.items.map((item:any) => (
             <HomeCard key={item.id} item={item} />
                         )):''}
       </Slider>
