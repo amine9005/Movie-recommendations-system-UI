@@ -9,7 +9,7 @@ const UCard = (props:{item:{id:string,cover:string,name:string,time:string}}) =>
         </div>
         <div className="text">
           <h3>{props.item.name}</h3>
-          <span>{props.item.time}</span>
+          <span>{props.item.time}</span> <br/>
           <button className="primary-btn">
             <i className='fa fa-play'></i> Play Now
           </button>
