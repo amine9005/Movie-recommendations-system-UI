@@ -40,7 +40,6 @@ const Page = (props:any) => {
 
   };
 
-
   return (
     <div className='homeContainer'>
       <Slider {...settings}>

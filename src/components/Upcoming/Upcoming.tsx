@@ -1,8 +1,56 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import UCard from './UCard'
+import Slider from 'react-slick'
 
+const SampleNextArrow = (props:any) =>{
+    const {onClick} = props
+
+    return (
+      <div className='control-btn' onClick={onClick}>
+        <button className='next'>
+          <i className='fa fa-chevron-right'></i>
+        </button>
+      </div>
+    )
+  }
+
+  const SamplePrevArrow = (props:any) =>{
+    const {onClick} = props
+
+    return (
+      <div className='control-btn' onClick={onClick}>
+        <button className='prev'>
+          <i className='fa fa-chevron-left'></i>
+        </button>
+      </div>
+    )
+  }
 const Upcoming = (props:any) => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        nextArrow:<SampleNextArrow/>,
+        prevArrow:<SamplePrevArrow/>,
+        responsive:[
+           { breakpoint:800,
+            settings:{
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            },
+            },
+            { breakpoint:600,
+                settings:{
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+                }
+    ]
+
+      };
   return (
     <>
     <section className='upcoming'>
@@ -13,10 +61,13 @@ const Upcoming = (props:any) => {
             </div>
 
             <div className="container">
+                <Slider {...settings}>
                 {props ? props.items.map((item:any)=>{
                     <UCard key={item.id} item={item}/>
                 }):''}
+                </Slider>
             </div>
+
         </div>
 
     </section></>
