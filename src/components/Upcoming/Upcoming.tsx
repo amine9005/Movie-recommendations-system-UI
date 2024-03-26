@@ -28,49 +28,49 @@ const SampleNextArrow = (props:any) =>{
   }
 const Upcoming = (props:any) => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow:<SampleNextArrow/>,
-        prevArrow:<SamplePrevArrow/>,
-        responsive:[
-           { breakpoint:800,
-            settings:{
-                slidesToShow: 2,
-                slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
             },
-            },
-            { breakpoint:600,
-                settings:{
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-                }
-    ]
-
-      };
+          },
+        ],
+      }
   return (
     <>
-    <section className='upcoming'>
-        <div className="container">
-            <div className="heading flexSB">
-                <h1>{props.title}</h1>
-                <Link to='/'>View All</Link>
-            </div>
+      <section className='upcoming'>
+        <div className='container'>
+          <div className='heading flexSB'>
+            <h1>{props.title}</h1>
+            <Link to='/'>View All</Link>
+          </div>
 
-            <div className="container">
-                <Slider {...settings}>
-                {props ? props.items.map((item:any)=>{
-                    <UCard key={item.id} item={item}/>
-                }):''}
-                </Slider>
-            </div>
+          <div className='content'>
+            <Slider {...settings}>
+
+              {props.items ? props.items.map((item:any) => {
+                return (
+                  <>
+                    <UCard key={item.id} item={item} />
+                  </>
+                )
+              }):''}
+            </Slider>
+
+          </div>
 
         </div>
-
-    </section></>
+      </section>
+    </>
   )
 }
 
