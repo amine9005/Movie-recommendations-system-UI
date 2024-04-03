@@ -3,6 +3,7 @@ import './App.scss';
 import {  Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import HomePage from './home/HomePage';
+import Watch from './components/Watch/Watch';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage/>}></Route>
+          <Route path='/watch/:id' element={<Watch/>}></Route>
         </Route>
         </Routes>
     </>
