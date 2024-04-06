@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { homeData } from '../../dummyData'
 import Upcoming from '../Upcoming/Upcoming'
 import { recommended } from '../../dummyData'
+import './Watch.scss'
 
 const Watch = () => {
   const {id} = useParams()
