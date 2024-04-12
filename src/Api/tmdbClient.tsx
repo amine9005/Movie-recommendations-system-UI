@@ -1,5 +1,4 @@
-import axiosClient from "./axiosClient";
-import Button from '@mui/material/Button'
+import axiosClient from "./AxiosClient";
 
 export const category:{[key: string]: string} = {
     movie: 'movie',
